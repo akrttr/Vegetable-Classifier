@@ -28,17 +28,20 @@ class Net(nn.Module):
         self.conv1 = nn.Conv2d(3, 6, 3, 1, 1)
         self.pool1 = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(6, 10, 3, 1, 1)
-        self.fc1 = nn.Linear(640, 120)
-        self.fc2 = nn.Linear(120, 84)
-        self.fc3 = nn.Linear(84, 15)
+        self.conv3 = nn.Conv2d(10, 5, 3, 1, 1)
+        self.conv4 = nn.Conv2d(5, 10, 3, 1, 1)
+        self.conv5 = nn.Conv2d(10, 10, 3, 1, 1)
+        self.fc1 = nn.Linear(40, 15)
     
     def forward(self, x):
         x = self.pool1(F.relu(self.conv1(x)))
         x = self.pool1(F.relu(self.conv2(x)))
+        x = self.pool1(F.relu(self.conv3(x)))
+        x = self.pool1(F.relu(self.conv4(x)))
+        x = self.pool1(F.relu(self.conv5(x)))
         x = torch.flatten(x, 1) # flatten all dimensions except batch
         x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
+
         return x
 def main():
     net = Net()
