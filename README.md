@@ -3,7 +3,7 @@
 
 - [x] Project created from Pytorch Docs.
 - [x] Layers are arranged
-- [ ] Validation
-- [ ] Residual value
-- [ ] Finetune Resnet
+- [x] Validation
+- [x] Residual value
+- [x] Finetune Resnet
 - [ ] Reporting
