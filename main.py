@@ -1,3 +1,10 @@
+"""
+24.04.2022
+BBM418-Assignment3
+@author:  Alihan Karatatar
+_version_: Python 3.8.0
+"""
+
 import torch
 import torchvision
 import torchvision.transforms as transforms
