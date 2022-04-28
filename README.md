@@ -6,4 +6,4 @@
 - [x] Validation
 - [x] Residual value
 - [x] Finetune Resnet
-- [ ] Reporting
+- [x] Reporting
